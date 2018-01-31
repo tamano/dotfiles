@@ -1,0 +1,8 @@
+function select-history() {
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | fzy --query "$LBUFFER" | sed 's/\\n/\n/')"
+    CURSOR=$#BUFFER
+    zle -R -c
+}
+zle -N select-history
+
+bindkey '^r' select-history
