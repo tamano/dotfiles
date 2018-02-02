@@ -1,0 +1,155 @@
+## Backspace key
+#
+#bindkey "^?" backward-delete-char
+
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+setopt prompt_subst
+setopt transient_rprompt
+
+## Default shell configuration
+# colors enables us to idenfity color by $fg[red].
+autoload colors
+colors
+
+# 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
+setopt auto_cd
+
+# cd でTabを押すとdir list を表示
+setopt auto_pushd
+
+# ディレクトリスタックに同じディレクトリを追加しないようになる
+setopt pushd_ignore_dups
+
+# コマンドのスペルチェックをする
+setopt correct
+
+# コマンドライン全てのスペルチェックをする
+setopt correct_all
+
+# 上書きリダイレクトの禁止
+setopt no_clobber
+
+# 補完候補リストを詰めて表示
+setopt list_packed
+
+# 補完候補が複数ある時に、一覧表示する
+setopt auto_list
+
+# コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
+setopt magic_equal_subst
+
+# カッコの対応などを自動的に補完する
+setopt auto_param_keys
+
+# ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+
+# 補完キー（Tab,  Ctrl+I) を連打するだけで順に補完候補を自動で補完する
+setopt auto_menu
+
+# sudoも補完の対象
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+# 色付きで補完する
+zstyle ':completion:*' list-colors di=34 fi=0
+
+# 複数のリダイレクトやパイプなど、必要に応じて tee や cat の機能が使われる
+setopt multios
+
+# 最後がディレクトリ名で終わっている場合末尾の / を自動的に取り除かない
+setopt noautoremoveslash
+
+# beepを鳴らさないようにする
+setopt nolistbeep
+
+# Match without pattern
+# ex. > rm *~398
+# remove * without a file "398". For test, use "echo *~398"
+setopt extended_glob
+
+## Keybind configuration
+#
+# emacs like keybind (e.x. Ctrl-a goes to head of a line and Ctrl-e goes
+#   to end of it)
+#
+bindkey -v
+
+## Command history configuration
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# 登録済コマンド行は古い方を削除
+setopt hist_ignore_all_dups
+
+# historyの共有
+setopt share_history
+
+# 余分な空白は詰める
+setopt hist_reduce_blanks
+
+# add history when command executed.
+setopt inc_append_history
+
+# history (fc -l) コマンドをヒストリリストから取り除く。
+setopt hist_no_store
+
+# Ctrl+D では終了しないようになる（exit, logout などを使う）
+setopt ignore_eof
+
+# コマンドラインでも # 以降をコメントと見なす
+setopt interactive_comments
+
+# コマンド名に / が含まれているとき PATH 中のサブディレクトリを探す
+setopt path_dirs
+
+# ctrl-w, ctrl-bキーで単語移動
+bindkey "^W" forward-word
+bindkey "^B" backward-word
+
+# back-wordでの単語境界の設定
+autoload -Uz select-word-style
+select-word-style default
+zstyle ':zle:*' word-chars " _-./;@"
+zstyle ':zle:*' word-style unspecified
+
+# エラーメッセージ本文出力に色付け
+e_normal=`echo -e "¥033[0;30m"`
+e_RED=`echo -e "¥033[1;31m"`
+e_BLUE=`echo -e "¥033[1;36m"`
+
+function make() {
+    LANG=C command make "$@" 2>&1 | sed -e "s@[Ee]rror:.*@$e_RED&$e_normal@g" -e "s@cannot¥sfind.*@$e_RED&$e_normal@g" -e "s@[Ww]arning:.*@$e_BLUE&$e_normal@g"
+}
+
+## Completion configuration
+#
+fpath=(~/.zsh/functions/Completion ${fpath})
+autoload -U compinit
+compinit -C
+
+## Prediction configuration
+#
+autoload predict-on
+
+## Alias configuration
+#
+# expand aliases before completing
+#
+setopt complete_aliases     # aliased ls needs if file/dir completions work
+
+## terminal configuration
+# zsh の extended_glob と HEAD^^^ を共存させる。
+# http://subtech.g.hatena.ne.jp/cho45/20080617/1213629154
+typeset -A abbreviations
+abbreviations=(
+  "L"    "| $PAGER"
+  "G"    "| grep"
+
+  "HEAD^"     "HEAD\\^"
+  "HEAD^^"    "HEAD\\^\\^"
+  "HEAD^^^"   "HEAD\\^\\^\\^"
+  "HEAD^^^^"  "HEAD\\^\\^\\^\\^\\^"
+  "HEAD^^^^^" "HEAD\\^\\^\\^\\^\\^"
+)
+
