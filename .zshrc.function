@@ -6,3 +6,13 @@ function select-history() {
 zle -N select-history
 
 bindkey '^r' select-history
+
+function select-ssh-host() {
+  local target
+  target=`cat ~/.ssh/config ~/.ssh/conf.d/* | grep "Host " | grep -v "*" | cut -d " " -f2 | fzy`
+  print "Connecting: ${target}"
+  ssh $target
+}
+zle -N select-ssh-host
+
+alias s="select-ssh-host"
