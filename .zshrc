@@ -5,6 +5,9 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/sbin:/usr/local/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
+# NeoVim
+export XDG_CONFIG_HOME=$HOME/dotfiles
+
 # Load other files
 [ -f $HOME/.zshrc.option ] && source $HOME/.zshrc.option
 [ -f $HOME/.zshrc.zplug ] && source $HOME/.zshrc.zplug
