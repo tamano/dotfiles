@@ -3,18 +3,18 @@ if &compatible
   set nocompatible
 endif
 
-" dein.vimのclone先を指定する
 set runtimepath+=~/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('~/dotfiles/.vim/dein'))
+let s:dein_dir = expand('~/dotfiles/.vim/dein')
 
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
-" 補完、スニペット
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet')
+    call dein#load_toml(s:dein_dir . '/plugins.toml', {'lazy': 0})
+    call dein#load_toml(s:dein_dir . '/lazy.toml', {'lazy': 1})
 
-" その他必要なプラグインはこちらに追加する
+    call dein#end()
+    call dein#save_state()
+endif
 
-call dein#end()
+source ~/.vimrc
