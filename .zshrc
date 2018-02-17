@@ -5,6 +5,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/sbin:/usr/local/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
+# Load other files
 [ -f $HOME/.zshrc.option ] && source $HOME/.zshrc.option
 [ -f $HOME/.zshrc.zplug ] && source $HOME/.zshrc.zplug
 [ -f $HOME/.zshrc.function ] && source $HOME/.zshrc.function
