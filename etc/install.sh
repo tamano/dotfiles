@@ -20,6 +20,7 @@ do
         if [ ! -f $target ]
         then
             ln -s $dots $target
+            echo "[link] ${target}"
         else
             echo "[skip] ${target} already exists"
         fi
