@@ -14,6 +14,10 @@ repo = 'rhysd/accelerated-jk'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
+# ブランチ名をlightlineに表示する
+[[plugins]]
+repo = 'itchyny/vim-gitbranch'
+
 # インデントを可視化
 [[plugins]]
 repo = 'Yggdroot/indentLine'

@@ -20,5 +20,15 @@ endif
 source ~/.vimrc
 
 colorscheme tender
-let g:lightline = { 'colorscheme': 'tender' }
+
+let g:lightline = {
+    \   'colorscheme': 'tender',
+    \   'active': {
+    \     'left': [ [ 'mode', 'paste' ],
+    \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \   },
+    \   'component_function': {
+    \     'gitbranch': 'gitbranch#name'
+    \   },
+    \ }
 
