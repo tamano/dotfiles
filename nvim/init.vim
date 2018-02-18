@@ -18,3 +18,7 @@ if dein#load_state(s:dein_dir)
 endif
 
 source ~/.vimrc
+
+colorscheme tender
+let g:lightline = { 'colorscheme': 'tender' }
+

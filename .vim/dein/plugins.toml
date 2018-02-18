@@ -4,6 +4,9 @@ repo = 'Shougo/dein.vim'
 [[plugins]] # 非同期処理
 repo = 'Shougo/vimproc.vim'
 
+[[plugins]] # カラーテーマ
+repo = 'jacoborus/tender.vim'
+
 [[plugins]] # j,kによる移動を爆速に
 repo = 'rhysd/accelerated-jk'
 

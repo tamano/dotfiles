@@ -212,7 +212,7 @@ inoremap jj <Esc>
 " カラー関連 Colors
 "-------------------------------------------------------------------------------
 
-" colorscheme yuroyoro256
+" colorscheme tender
 
 " ハイライト on
 syntax enable
