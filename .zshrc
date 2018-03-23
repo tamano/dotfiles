@@ -5,6 +5,9 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/sbin:/usr/local/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
 # NeoVim
 export XDG_CONFIG_HOME=$HOME/dotfiles
 
