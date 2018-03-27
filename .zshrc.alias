@@ -1,6 +1,8 @@
 alias ls='ls -alG'
 alias ll='ls'
 
+alias cp='nocorrect cp'
+
 alias d='cd ~/Desktop'
 
 alias g='git'
