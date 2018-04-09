@@ -22,6 +22,8 @@ if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
 
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
 # Load pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
