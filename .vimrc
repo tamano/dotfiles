@@ -20,7 +20,7 @@ set modelines=0                  " モードラインは無効
 set notitle                      " vimを使ってくれてありがとう
 
 " OSのクリップボードを使用する
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
 imap <C-p>  <ESC>"*pa
