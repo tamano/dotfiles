@@ -34,3 +34,7 @@ eval "$(pyenv init -)"
 
 # node
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
