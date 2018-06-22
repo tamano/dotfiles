@@ -31,3 +31,6 @@ eval "$(pyenv init -)"
 
 # Load Kiex (for Elixir)
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
+# node
+export PATH=$PATH:$HOME/.nodebrew/current/bin
