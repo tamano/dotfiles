@@ -27,4 +27,8 @@ alias gbda='git branch --merged | command grep -vE "^(*|\smaster\s$)" | command 
 alias bi='bundle install'
 alias be='bundle exec'
 
+alias dc='docker-compose'
+alias dce='docker-compose exec'
+alias dcer='docker-compose exec rails'
+
 alias vim='nvim'
