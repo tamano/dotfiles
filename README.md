@@ -15,7 +15,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ./installer.sh ~/dotfiles/.vim/dein
 ```
 
-start Nvim and put command below
+start `nvim` and put command below
 
 ```vim
 :call dein#install()
