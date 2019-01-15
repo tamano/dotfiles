@@ -42,3 +42,4 @@ export PATH=$PATH:$HOME/.nodebrew/current/bin
 # iTerm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
