@@ -26,12 +26,16 @@ if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+if [ -e "/usr/local/Cellar/qt@5.5" ]; then
+  export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+fi
 
 # Load pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ -e "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 # Load Kiex (for Elixir)
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"

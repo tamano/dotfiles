@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+# Install brew based tools
+brew install neovim
+brew install fzy
+brew install tig
+
+
+# Create symlinks in $HOME
 EXCLUDE_FILES=( . .. .git)
 
 for dots in `ls -1dA $HOME/dotfiles/.*`
