@@ -6,3 +6,5 @@
 	excludesfile = /Users/tamano/.gitignore_global
 [http]
 	sslVerify = false
+[push]
+	default = current
