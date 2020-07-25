@@ -3,7 +3,7 @@
 	email = everfree.main@gmail.com
 [core]
 	editor = nvim
-	excludesfile = /Users/tamano/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [http]
 	sslVerify = false
 [push]
