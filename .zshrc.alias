@@ -22,7 +22,7 @@ alias gcp='git cherry-pick'
 alias grbi='git rebase -i'
 alias gf='git fetch'
 alias ggpull='git pull origin'
-alias ggpush='git push origin'
+alias ggpush='git push -u origin'
 alias gbda='git branch --merged | command grep -vE "^(*|\smaster\s$)" | command xargs -n 1 git branch -d'
 
 alias bi='bundle install'
