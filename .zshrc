@@ -20,6 +20,7 @@ export XDG_CONFIG_HOME=$HOME/dotfiles
 [ -f $HOME/.zshrc.zplug ] && source $HOME/.zshrc.zplug
 [ -f $HOME/.zshrc.function ] && source $HOME/.zshrc.function
 [ -f $HOME/.zshrc.alias ] && source $HOME/.zshrc.alias
+[ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
 
 # Load rbenv
 if [ -e "$HOME/.rbenv" ]; then
