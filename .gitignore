@@ -3,3 +3,4 @@
 .vim/dein/cache_nvim
 .vim/dein/state_nvim.vim
 
+/.zshrc.private
