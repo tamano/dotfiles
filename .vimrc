@@ -282,5 +282,22 @@ command! Sjis Cp932
 " その他 Misc
 "-------------------------------------------------------------------------------
 
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" Move window
+nmap <Space> <C-w>w
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+
+" Resize window
+nmap s<left> <C-w>>
+nmap s<right> <C-w><
+nmap s<up> <C-w>+
+nmap s<down> <C-w>-
+
 " ;でコマンド入力( ;と:を入れ替)
 noremap ; :
