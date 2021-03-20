@@ -4,6 +4,12 @@ repo = 'Shougo/dein.vim'
 [[plugins]] # 非同期処理
 repo = 'Shougo/vimproc.vim'
 
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
 [[plugins]] # カラーテーマ
 repo = 'jacoborus/tender.vim'
 
