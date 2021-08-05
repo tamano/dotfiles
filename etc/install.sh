@@ -5,6 +5,7 @@ brew install neovim
 brew install fzy
 brew install tig
 brew install tmux
+brew install gh
 
 
 # Create symlinks in $HOME

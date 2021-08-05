@@ -153,3 +153,4 @@ abbreviations=(
   "HEAD^^^^^" "HEAD\\^\\^\\^\\^\\^"
 )
 
+eval "$(gh completion -s zsh)"
