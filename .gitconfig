@@ -7,4 +7,22 @@
 [http]
 	sslVerify = false
 [push]
-	default = current
+  default = current
+
+[alias]
+  a = add
+  b = branch
+  st = status
+  c = commit -v
+  co = checkout
+  cp = cherry-pick
+  f = fetch
+
+  rbi = git rebase -i
+
+  cm = checkout main
+  pullo = pull origin
+  pusho = push -u origin
+
+  camend = commit -v --amend
+  cinit = commit --allow-empty -m 'Initial Commit.'
