@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # Install brew based tools
+brew install git
 brew install neovim
 brew install fzy
 brew install tig
@@ -35,3 +36,6 @@ do
         fi
     fi
 done
+
+sudo ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
+
