@@ -1,5 +1,5 @@
 function select-history() {
-    BUFFER="$(history -nr 1 | awk '!a[$0]++' | fzy --query "$LBUFFER" | sed 's/\\n/\n/')"
+    BUFFER="$(history -nr 1 | awk '!a[$0]++' | fzf  --layout=reverse --height=90% --query "$LBUFFER" | sed 's/\\n/\n/')"
     CURSOR=$#BUFFER
     zle -R -c
 }
@@ -9,7 +9,7 @@ bindkey '^r' select-history
 
 function select-ssh-host() {
   local target
-  target=`cat ~/.ssh/config ~/.ssh/conf.d/* | grep "Host " | grep -v "*" | cut -d " " -f2 | fzy`
+  target=`cat ~/.ssh/config ~/.ssh/conf.d/* | grep "Host " | grep -v "*" | cut -d " " -f2 | fzf --layout=reverse --height=50%`
   print "Connecting: ${target}"
   ssh $target
 }

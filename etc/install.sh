@@ -3,13 +3,12 @@
 # Install brew based tools
 brew install git
 brew install neovim
-brew install fzy      # TODO: integrate with fzf
 brew install tig
 brew install tmux
 brew install gh
 brew install lsd
 brew install zoxide
-brew install fzf      # require for zoxide
+brew install fzf
 
 
 # Create symlinks in $HOME
