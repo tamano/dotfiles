@@ -2,6 +2,9 @@
 #
 #bindkey "^?" backward-delete-char
 
+# 直前のコマンドをくりかえるrコマンドを無効化
+disable r
+
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 setopt transient_rprompt
