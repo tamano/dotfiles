@@ -7,6 +7,7 @@ brew install fzy
 brew install tig
 brew install tmux
 brew install gh
+brew install lsd
 
 
 # Create symlinks in $HOME
