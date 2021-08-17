@@ -5,6 +5,18 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "themes/ys", from:oh-my-zsh, lazy:true
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 
 ######################################### install & load
 if ! zplug check --verbose; then
