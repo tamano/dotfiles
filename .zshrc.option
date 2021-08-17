@@ -154,3 +154,5 @@ abbreviations=(
 )
 
 eval "$(gh completion -s zsh)"
+eval "$(zoxide init zsh)"
+
