@@ -1,4 +1,6 @@
 export EDITOR=vim
+export TERM=xterm-256color
+
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
 export PATH=$PATH:$HOME/dotfiles/bin
 export PATH=$PATH:$HOME/bin
