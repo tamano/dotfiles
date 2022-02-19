@@ -34,3 +34,5 @@ alias dce='docker-compose exec'
 alias dcer='docker-compose exec rails'
 
 alias vim='nvim'
+
+alias ci='circleci'

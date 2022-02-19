@@ -16,3 +16,10 @@ function select-ssh-host() {
 zle -N select-ssh-host
 
 alias s="select-ssh-host"
+
+# for iTerm shell integration
+function badge() {
+    printf "\e]1337;SetBadgeFormat=%s\a"\
+    $(echo -n "$1" | base64)
+}
+
