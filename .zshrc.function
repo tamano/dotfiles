@@ -5,6 +5,7 @@ function select-history() {
 }
 zle -N select-history
 
+bindkey '^r' select-history
 alias redo="select-history"
 
 function select-ssh-host() {
