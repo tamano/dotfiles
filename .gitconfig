@@ -1,6 +1,6 @@
 [user]
 	name = Yuya TAMANO
-	email = everfree.main@gmail.com
+	email = 965378+tamano@users.noreply.github.com
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
