@@ -301,3 +301,7 @@ nmap s<down> <C-w>-
 
 " ;でコマンド入力( ;と:を入れ替)
 noremap ; :
+
+
+:command! -nargs=* -complete=file Rg :call ripgrep#search(<q-args>)
+
