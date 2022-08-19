@@ -5,6 +5,7 @@ alias ll='l -l'
 alias cp='nocorrect cp'
 
 alias d='cd ~/Desktop'
+alias ws='cd ~/workspace'
 
 alias g='git'
 alias gb='git branch'
@@ -34,7 +35,9 @@ alias dce='docker-compose exec'
 alias dcer='docker-compose exec rails'
 
 alias vim='nvim'
+alias ide='~/dotfiles/bin/tmux-pane-splitter.sh'
 
 alias ci='circleci'
 
 alias date='gdate'
+
