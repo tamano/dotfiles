@@ -7,7 +7,7 @@
 ```sh
 cd ~
 git clone git@github.com:tamano/dotfiles.git
-sh dotfiles/etc/install.sh
+sh dotfiles/setup.sh
 ```
 
 ## dein.vim
