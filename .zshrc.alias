@@ -36,3 +36,5 @@ alias dcer='docker-compose exec rails'
 alias vim='nvim'
 
 alias ci='circleci'
+
+alias date='gdate'

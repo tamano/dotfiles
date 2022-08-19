@@ -36,7 +36,7 @@ fi
 # Load pyenv
 if [ -e "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
+  export PATH="$PYENV_ROOT/shims:$PATH"
   eval "$(pyenv init -)"
 fi
 
@@ -50,3 +50,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# added by travis gem
+[ ! -s /Users/tamano.yuya/.travis/travis.sh ] || source /Users/tamano.yuya/.travis/travis.sh
