@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+echo "🏎 Starting Setup!"
+
+#########################################################
+echo "⏱️ Begin installing tools"
+#########################################################
+
 # Install brew based tools
 brew install git
 brew install neovim
@@ -10,6 +16,19 @@ brew install lsd
 brew install zoxide
 brew install fzf
 
+echo "✅ Complete installing tools"
+
+#########################################################
+echo "⏱️ Begin tool's setup"
+#########################################################
+
+sudo ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
+
+echo "✅ Complete tool's setup"
+
+#########################################################
+echo "⏱️ Begin linking dotfiles/dotdirs"
+#########################################################
 
 # Create symlinks in $HOME
 EXCLUDE_FILES=( . .. .git)
@@ -39,5 +58,6 @@ do
     fi
 done
 
-sudo ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
+echo "✅ Complete linking dotfiles and dotdirs"
 
+echo "🏁 All Complete!"
