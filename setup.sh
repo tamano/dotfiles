@@ -27,37 +27,43 @@ sudo ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/
 echo "✅ Complete tool's setup"
 
 #########################################################
-echo "⏱️ Begin linking dotfiles/dotdirs"
+echo "⏱️ Begin linking dotfiles"
 #########################################################
 
-# Create symlinks in $HOME
-EXCLUDE_FILES=( . .. .git)
+CURRENT_DIR=`pwd`
 
-for dots in `ls -1dA $HOME/dotfiles/.*`
-do
-    skip=0
+for FILE_NAME in `ls -1A $CURRENT_DIR/dotfiles/`; do
+    ORIGINAL_FILE="${CURRENT_DIR}/dotfiles/${FILE_NAME}"
+    TARGET_LINK="${HOME}/${FILE_NAME}"
 
-    for ex in ${EXCLUDE_FILES[@]}
-    do
-        if [ $dots = "${HOME}/dotfiles/${ex}" ]
-        then
-	    skip=1
-        fi
-    done
-
-    if [ $skip -eq 0 ]
-    then
-        target="$HOME/`basename $dots`"
-        if [ ! -f $target ]
-        then
-            ln -s $dots $target
-            echo "[link] ${target}"
-        else
-            echo "[skip] ${target} already exists"
-        fi
+    if [ -e $TARGET_LINK ]; then
+        echo "[skip] ${TARGET_LINK} already exists"
+    else
+        ln -s $ORIGINAL_FILE $TARGET_LINK
+        echo "[link] ${TARGET_LINK} created"
     fi
 done
 
-echo "✅ Complete linking dotfiles and dotdirs"
+echo "✅ Complete linking dotfiles"
+
+#########################################################
+echo "⏱️ Begin linking .config"
+#########################################################
+
+CURRENT_DIR=`pwd`
+
+for DIR_NAME in `ls -1A $CURRENT_DIR/dotconfig/`; do
+    ORIGINAL_DIR="${CURRENT_DIR}/dotconfig/${DIR_NAME}"
+    TARGET_LINK="${HOME}/.config/${DIR_NAME}"
+
+    if [ -e $TARGET_LINK ]; then
+        echo "[skip] ${TARGET_LINK} already exists"
+    else
+        ln -s $ORIGINAL_DIR $TARGET_LINK
+        echo "[link] ${TARGET_LINK} created"
+    fi
+done
+
+echo "✅ Complete linking .config"
 
 echo "🏁 All Complete!"

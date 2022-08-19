@@ -14,9 +14,6 @@ export PATH=$PATH:$HOME/Library/Python/3.7/bin
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
-# NeoVim
-export XDG_CONFIG_HOME=$HOME/dotfiles
-
 # Load other files
 [ -f $HOME/.zshrc.option ] && source $HOME/.zshrc.option
 [ -f $HOME/.zshrc.zplug ] && source $HOME/.zshrc.zplug
