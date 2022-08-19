@@ -1,20 +1,35 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+merged = '0'
+hook_add = '''
+let g:coc_global_extensions = [
+      \'coc-diagnostic', 
+      \'coc-explorer', 
+      \'coc-lists', 
+      \'coc-html', 
+      \'coc-tsserver', 
+      \'coc-json', 
+      \'coc-markdownlint', 
+      \'coc-solargraph',
+      \'coc-rust-analyzer', 
+      \'coc-sql', 
+      \'coc-yaml'
+\]
+:nmap <space>e <Cmd>CocCommand explorer<CR>
+'''
+
 [[plugins]] # 非同期処理
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
 
-[[plugins]]
-repo = 'Shougo/vimfiler'
-
 [[plugins]] # カラーテーマ
 repo = 'jacoborus/tender.vim'
-
-[[plugins]] # j,kによる移動を爆速に
-repo = 'rhysd/accelerated-jk'
 
 # statusline
 [[plugins]]
@@ -32,6 +47,66 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
+# ripgrepコマンド
 [[plugins]]
 repo = 'kyoh86/vim-ripgrep'
+
+# C-j, C-kで高速縦移動
+[[plugins]]
+repo = 'haya14busa/vim-edgemotion'
+hook_add = '''
+nmap <C-j> <Plug>(edgemotion-j)
+nmap <C-k> <Plug>(edgemotion-k)
+'''
+
+# 検索結果件数をバーチャル表示
+[[plugins]]
+repo = 'kevinhwang91/nvim-hlslens'
+hook_add = '''
+lua << EOF
+  local kopts = {noremap = true, silent = true}
+  vim.api.nvim_set_keymap('n', 'n',
+    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+  vim.api.nvim_set_keymap('n', 'N',
+    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+  vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+  vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+  vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+  vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+  vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
+EOF
+'''
+
+# スクロールバーを追加
+[[plugins]]
+repo = 'petertriho/nvim-scrollbar'
+hook_add = '''
+lua << EOF
+  require("scrollbar").setup()
+  require("scrollbar.handlers.search").setup()
+EOF
+'''
+
+# fコマンドでのjumpをわかりやすく
+[[plugins]]
+repo = 'unblevable/quick-scope'
+hook_add = '''
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+'''
+
+# カーソルjump
+[[plugins]]
+repo = 'phaazon/hop.nvim'
+hook_add = '''
+lua << EOF
+  require'hop'.setup()
+EOF
+nmap <Leader><Leader> [hop]
+xmap <Leader><Leader> [hop]
+nnoremap <silent> [hop]w :HopWord<CR>
+nnoremap <silent> [hop]l :HopLine<CR>
+nnoremap <silent> [hop]f :HopChar1<CR>
+'''
 
