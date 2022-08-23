@@ -39,6 +39,17 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'itchyny/vim-gitbranch'
 
+
+# JSONの色付け用。
+# 本当はlazy loadしたいが、後述のindentLineより前に呼ばないとJSONファイルのダブルクォートが表示されないため、やむなく。
+ [[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+hook_add = '''
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0
+'''
+
 # インデントを可視化
 [[plugins]]
 repo = 'Yggdroot/indentLine'
