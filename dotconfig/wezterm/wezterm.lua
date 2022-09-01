@@ -16,6 +16,9 @@ return {
   -- font = wezterm.font("HackGen35 Console NFJ", { weight = 'Bold'}),
   font_size = 12.0,
 
+  -- Sound
+  audible_bell = "Disabled",
+
   -- Misc
   use_ime = true,
 }
