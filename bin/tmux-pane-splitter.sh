@@ -10,10 +10,10 @@ else
   case $1 in
     desk)
       tmux split-window -h
-      tmux split-window -v
-      tmux resize-pane -D 15
       tmux select-pane -t 1
+      tmux resize-pane -R 50
       tmux split-window -v
+      tmux resize-pane -D 10
       tmux select-pane -t 1
       clear
       ;;
