@@ -20,7 +20,25 @@ set modelines=0                  " モードラインは無効
 set notitle                      " vimを使ってくれてありがとう
 
 " OSのクリップボードを使用する
-set clipboard+=unnamed
+if has('wsl')
+  set clipboard&
+  set clipboard^=unnamedplus
+
+  let g:clipboard = {
+    \   'name': 'myClipboard',
+    \   'copy': {
+    \      '+': 'win32yank.exe -i',
+    \      '*': 'win32yank.exe -i',
+    \    },
+    \   'paste': {
+    \      '+': 'win32yank.exe -o',
+    \      '*': 'win32yank.exe -o',
+    \   },
+    \   'cache_enabled': 1,
+    \ }
+else
+  set clipboard+=unnamed
+endif
 
 " 挿入モードでCtrl+kを押すとクリップボードの内容を貼り付けられるようにする "
 imap <C-p>  <ESC>"*pa
