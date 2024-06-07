@@ -1,3 +1,4 @@
+export LANG="C"
 export EDITOR=vim
 export TERM=xterm-256color
 
