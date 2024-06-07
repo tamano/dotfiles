@@ -32,15 +32,16 @@ if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
 fi
 
-if [ -e "/usr/local/Cellar/qt@5.5" ]; then
-  export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-fi
-
 # Load pyenv
 if [ -e "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
+fi
+
+# Load qt for old mac
+if [ -e "/usr/local/Cellar/qt@5.5" ]; then
+  export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 fi
 
 # Load Kiex (for Elixir)
