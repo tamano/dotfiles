@@ -15,13 +15,6 @@ export PATH=$PATH:$HOME/Library/Python/3.7/bin
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
-# Load other files
-[ -f $HOME/.zshrc.option ] && source $HOME/.zshrc.option
-[ -f $HOME/.zshrc.zplug ] && source $HOME/.zshrc.zplug
-[ -f $HOME/.zshrc.function ] && source $HOME/.zshrc.function
-[ -f $HOME/.zshrc.alias ] && source $HOME/.zshrc.alias
-[ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
-
 # Load linuxbrew
 if [ -e "/home/linuxbrew/.linuxbrew" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -57,3 +50,11 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # added by travis gem
 [ ! -s /Users/tamano.yuya/.travis/travis.sh ] || source /Users/tamano.yuya/.travis/travis.sh
+
+# Load other files
+[ -f $HOME/.zshrc.option ] && source $HOME/.zshrc.option
+[ -f $HOME/.zshrc.zplug ] && source $HOME/.zshrc.zplug
+[ -f $HOME/.zshrc.function ] && source $HOME/.zshrc.function
+[ -f $HOME/.zshrc.alias ] && source $HOME/.zshrc.alias
+[ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
+
