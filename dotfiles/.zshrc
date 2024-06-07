@@ -22,6 +22,11 @@ export PATH=$PATH:$GOPATH/bin
 [ -f $HOME/.zshrc.alias ] && source $HOME/.zshrc.alias
 [ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
 
+# Load linuxbrew
+if [ -e "/home/linuxbrew/.linuxbrew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Load rbenv
 if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
