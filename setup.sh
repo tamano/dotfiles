@@ -30,6 +30,7 @@ echo "✅ Complete tool's setup"
 echo "⏱️ Begin linking dotfiles"
 #########################################################
 
+cd dotfiles
 CURRENT_DIR=`pwd`
 
 for FILE_NAME in `ls -1A $CURRENT_DIR/dotfiles/`; do
@@ -38,6 +39,8 @@ for FILE_NAME in `ls -1A $CURRENT_DIR/dotfiles/`; do
 
     if [ -e $TARGET_LINK ]; then
         echo "[skip] ${TARGET_LINK} already exists"
+    elif [ $FILE_NAME = ".git" -o $FILE_NAME = ".gitignore" ]; then
+        echo "[skip] ${TARGET_LINK} should not be copied"
     else
         ln -s $ORIGINAL_FILE $TARGET_LINK
         echo "[link] ${TARGET_LINK} created"
@@ -51,6 +54,10 @@ echo "⏱️ Begin linking .config"
 #########################################################
 
 CURRENT_DIR=`pwd`
+
+if [ ! -d ${HOME}/.config ]; then
+    mkdir ${HOME}/.config
+fi
 
 for DIR_NAME in `ls -1A $CURRENT_DIR/dotconfig/`; do
     ORIGINAL_DIR="${CURRENT_DIR}/dotconfig/${DIR_NAME}"
