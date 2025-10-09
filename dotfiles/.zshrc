@@ -1,6 +1,10 @@
-export LANG="C"
+#export LANG="C"
+export LC_ALL=en_US.UTF-8
+export TZ=Asia/Tokyo
+
 export EDITOR=vim
 export TERM=xterm-256color
+export LESSCHARSET=utf-8
 
 export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
 export PATH=$PATH:$HOME/dotfiles/bin
@@ -9,9 +13,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/sbin:/usr/local/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
-
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
-
 
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
