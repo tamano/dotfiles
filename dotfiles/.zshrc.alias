@@ -39,5 +39,7 @@ alias ide='~/dotfiles/bin/tmux-pane-splitter.sh'
 
 alias ci='circleci'
 
-alias date='gdate'
+if type "gdate" > /dev/null 2>&1; then
+  alias date='gdate'
+fi
 

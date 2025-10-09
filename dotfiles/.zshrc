@@ -15,8 +15,17 @@ export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
 
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+# Load GoLang
+if [ -e "$HOME/.go" ]; then
+  export GOPATH=$HOME/.go
+  export PATH=$PATH:$GOPATH/bin
+fi
+
+# Load Deno
+if [ -e "$HOME/.deno" ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH=$PATH:"$DENO_INSTALL/bin"
+fi
 
 # Load linuxbrew
 if [ -e "/home/linuxbrew/.linuxbrew" ]; then
@@ -43,13 +52,13 @@ fi
 # Load Kiex (for Elixir)
 [[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
-# node
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # iTerm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# Load nodebrew
+if [ -e "$HOME/.nodebrew" ]; then
+  export PATH=$PATH:$HOME/.nodebrew/current/bin
+fi
 
 # added by travis gem
 [ ! -s /Users/tamano.yuya/.travis/travis.sh ] || source /Users/tamano.yuya/.travis/travis.sh
