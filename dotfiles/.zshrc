@@ -15,18 +15,6 @@ export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
 
-# Load GoLang
-if [ -e "$HOME/.go" ]; then
-  export GOPATH=$HOME/.go
-  export PATH=$PATH:$GOPATH/bin
-fi
-
-# Load Deno
-if [ -e "$HOME/.deno" ]; then
-  export DENO_INSTALL="$HOME/.deno"
-  export PATH=$PATH:"$DENO_INSTALL/bin"
-fi
-
 # Load linuxbrew
 if [ -e "/home/linuxbrew/.linuxbrew" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -44,21 +32,33 @@ if [ -e "$HOME/.pyenv" ]; then
   eval "$(pyenv init -)"
 fi
 
-# Load qt for old mac
-if [ -e "/usr/local/Cellar/qt@5.5" ]; then
-  export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+# Load GoLang
+if [ -e "$HOME/.go" ]; then
+  export GOPATH=$HOME/.go
+  export PATH=$PATH:$GOPATH/bin
 fi
-
-# Load Kiex (for Elixir)
-[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
-
-# iTerm2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Load nodebrew
 if [ -e "$HOME/.nodebrew" ]; then
   export PATH=$PATH:$HOME/.nodebrew/current/bin
 fi
+
+# Load Deno
+if [ -e "$HOME/.deno" ]; then
+  export DENO_INSTALL="$HOME/.deno"
+  export PATH=$PATH:"$DENO_INSTALL/bin"
+fi
+
+# Load Kiex (for Elixir)
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
+# Load qt for old mac
+if [ -e "/usr/local/Cellar/qt@5.5" ]; then
+  export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+fi
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # added by travis gem
 [ ! -s /Users/tamano.yuya/.travis/travis.sh ] || source /Users/tamano.yuya/.travis/travis.sh
