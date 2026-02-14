@@ -26,3 +26,5 @@
 
   camend = commit -v --amend
   cinit = commit --allow-empty -m 'Initial Commit.'
+
+  w = worktree
