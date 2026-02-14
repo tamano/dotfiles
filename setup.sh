@@ -8,14 +8,15 @@ echo "⏱️ Begin installing tools"
 
 # Install brew based tools
 brew install git
+brew install lsd
 brew install neovim
-brew install tig
-brew install gitui
+#brew install tig
+brew install lazygit
 brew install tmux
 #brew install gh
-brew install lsd
 brew install zoxide
 brew install fzf
+brew install ripgrep
 
 echo "✅ Complete installing tools"
 
