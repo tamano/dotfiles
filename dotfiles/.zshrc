@@ -20,6 +20,11 @@ if [ -e "/home/linuxbrew/.linuxbrew" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# Load anyenv
+if [ -e "$HOME/.anyenv" ]; then
+  eval "$(anyenv init - )"
+fi
+
 # Load rbenv
 if [ -e "$HOME/.rbenv" ]; then
   eval "$(rbenv init - zsh)"
