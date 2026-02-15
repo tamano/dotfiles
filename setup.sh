@@ -10,7 +10,7 @@ echo "⏱️ Begin installing tools"
 brew install git
 brew install lsd
 brew install neovim
-#brew install tig
+brew install tig
 brew install lazygit
 brew install tmux
 #brew install gh
