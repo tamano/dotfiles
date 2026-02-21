@@ -13,6 +13,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/sbin:/usr/local/bin
 export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
 
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
 
 # Load linuxbrew
