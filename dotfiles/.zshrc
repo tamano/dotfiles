@@ -62,9 +62,6 @@ if [ -e "/usr/local/Cellar/qt@5.5" ]; then
   export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 fi
 
-# iTerm2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # added by travis gem
 [ ! -s /Users/tamano.yuya/.travis/travis.sh ] || source /Users/tamano.yuya/.travis/travis.sh
 
