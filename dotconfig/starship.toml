@@ -6,10 +6,8 @@ $git_commit\
 $git_state\
 $git_status\
 $time\
-$status
-\\$ """
-
-right_format = """
+$status\
+$fill\
 $direnv\
 $env_var\
 $docker_context\
@@ -80,7 +78,10 @@ $os\
 $container\
 $netns\
 $shell
-"""
+\\$ """
+
+[fill]
+symbol = ' '
 
 [directory]
 style = 'bold #875f00'
