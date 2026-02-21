@@ -100,3 +100,41 @@ nnoremap <silent> [hop]l :HopLine<CR>
 nnoremap <silent> [hop]f :HopChar1<CR>
 '''
 
+# ファイルツリー表示
+[[plugins]]
+repo = 'lambdalisue/vim-fern'
+
+# ファイルツリーのNerdFont対応
+[[plugins]]
+repo = 'lambdalisue/vim-nerdfont'
+
+# ファイルツリーのNerdFont対応
+[[plugins]]
+repo = 'lambdalisue/vim-fern-renderer-nerdfont'
+depends = ['fern.vim', 'nerdfont.vim']
+hook_add = '''
+let g:fern#renderer = "nerdfont"
+'''
+
+# Fernを標準ファイラーに(:e .)
+[[plugins]]
+repo = 'lambdalisue/vim-fern-hijack'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+on_cmd = ['Files', 'GFiles', 'Buffers', 'History', 'Tags', 'Marks']
+hook_add = '''
+  nnoremap <silent> <Leader>f :Files<CR>
+  nnoremap <silent> <Leader>g :GFiles<CR>
+  nnoremap <silent> <Leader>b :Buffers<CR>
+  nnoremap <silent> <Leader>r :Rg<CR>
+'''
+
+

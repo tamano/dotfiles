@@ -4,9 +4,9 @@ repo = 'm-demare/hlargs.nvim'
 on_event = 'BufRead'
 
 # ブロックの最後に定義を表示
-[[plugins]]
-repo = 'haringsrob/nvim_context_vt'
-on_event = 'BufRead'
+#[[plugins]]
+#repo = 'haringsrob/nvim_context_vt'
+#on_event = 'BufRead'
 
 [[plugins]]
 repo = 'elixir-lang/vim-elixir'
