@@ -17,6 +17,7 @@ brew install tmux
 brew install zoxide
 brew install fzf
 brew install ripgrep
+brew install starship
 
 echo "✅ Complete installing tools"
 

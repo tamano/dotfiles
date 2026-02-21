@@ -1,0 +1,133 @@
+format = """
+[#](bold blue) \
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$time\
+$status
+\\$ """
+
+right_format = """
+$direnv\
+$env_var\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$fortran\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$mise\
+$crystal\
+$custom\
+$sudo\
+$jobs\
+$os\
+$container\
+$netns\
+$shell
+"""
+
+[directory]
+style = 'bold #875f00'
+truncation_length = 5
+truncation_symbol = '…/'
+
+[git_branch]
+format = 'on [$symbol$branch(:$remote_branch)]($style)'
+style = 'bold cyan'
+symbol = ''
+
+[git_commit]
+format = ' [\($hash$tag\)]($style)'
+#only_detached = false
+tag_disabled = false
+tag_symbol = '🏷 '
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style= 'bold red'
+
+[git_status]
+format = ' ([\[$all_status$ahead_behind\]]($style) )'
+style= 'bold green'
+conflicted = '=$count'
+ahead = '⇡$count'
+behind = '⇣$count'
+untracked = '?$count'
+stashed = '\$$count'
+modified = '!$count'
+staged = '+$count'
+renamed = '»$count'
+deleted = '✘$count'
+
+[time]
+disabled = false
+format = '\[[$time]($style)\]'
+style = 'white'
+
+[status]
+disabled = false
+format = ' [error:$status]($style) '
+
+[env_var.RAILS_ENV]
+format = "with RAILS_ENV:[$env_value]($style) "
+style = 'white'
+
+[memory_usage]
+disabled = false
+

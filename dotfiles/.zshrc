@@ -72,3 +72,4 @@ fi
 [ -f $HOME/.zshrc.alias ] && source $HOME/.zshrc.alias
 [ -f $HOME/.zshrc.private ] && source $HOME/.zshrc.private
 
+eval "$(starship init zsh)"
