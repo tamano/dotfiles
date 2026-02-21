@@ -5,7 +5,7 @@ return {
   color_scheme = "Japanesque",
 
   -- Window
-  window_background_opacity = 0.95,
+  window_background_opacity = 0.90,
   initial_rows = 48,
   initial_cols = 160,
   hide_tab_bar_if_only_one_tab = true,
