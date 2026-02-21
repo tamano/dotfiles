@@ -4,7 +4,7 @@ fi
 
 source ~/.zplug/init.zsh
 
-zplug "raykle/ysr-zsh-theme", as:theme
+#zplug "raykle/ysr-zsh-theme", as:theme
 #zplug "Enonya/yuyuko.zsh-theme", as:theme
 #zplug "themes/ys", from:oh-my-zsh, lazy:true
 
