@@ -77,4 +77,27 @@ done
 
 echo "✅ Complete linking .config"
 
+#########################################################
+echo "⏱️ Create working directories"
+#########################################################
+
+CURRENT_DIR=`pwd`
+
+TARGET_DIRECTORIES=(
+    "${HOME}/workspace/develop"
+    "${HOME}/workspace/lab"
+)
+
+for TARGET_DIR in "${TARGET_DIRECTORIES[@]}" ; do
+
+    if [ -d ${TARGET_DIR} ]; then
+        echo "[skip] ${TARGET_DIR} already exists"
+    else
+        mkdir -p ${TARGET_DIR}
+        echo "[create] ${TARGET_DIR} created"
+    fi
+done
+
+echo "✅ Complete creating working directories"
+
 echo "🏁 All Complete!"
