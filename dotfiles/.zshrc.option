@@ -156,6 +156,6 @@ abbreviations=(
   "HEAD^^^^^" "HEAD\\^\\^\\^\\^\\^"
 )
 
-eval "$(gh completion -s zsh)"
+#eval "$(gh completion -s zsh)"
 eval "$(zoxide init zsh)"
 
