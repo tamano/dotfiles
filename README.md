@@ -2,6 +2,7 @@
 
 ## requirement
 - install [homebrew](https://brew.sh/index).
+- install [git](https://git-scm.com/).
 
 ## dotfiles
 ```sh
