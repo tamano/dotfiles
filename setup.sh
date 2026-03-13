@@ -7,6 +7,7 @@ echo "⏱️ Begin installing tools"
 #########################################################
 
 # Install brew based tools
+brew install zsh
 brew install git
 brew install lsd
 brew install neovim
