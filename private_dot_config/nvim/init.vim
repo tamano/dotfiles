@@ -46,4 +46,3 @@ let g:lightline = {
     \     'gitbranch': 'gitbranch#name'
     \   },
     \ }
-

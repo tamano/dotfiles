@@ -1,0 +1,6 @@
+[data]
+{{- if eq .chezmoi.os "darwin" }}
+    os_family = "macos"
+{{- else if eq .chezmoi.os "linux" }}
+    os_family = "linux"
+{{- end }}

@@ -21,4 +21,10 @@ return {
 
   -- Misc
   use_ime = true,
+
+  -- Keys
+  keys = {
+    { key = 'Enter', mods = 'ALT', action = wezterm.action.SendKey { key = 'Enter', mods = 'ALT' } },
+    { key = 'Enter', mods = 'CMD', action = wezterm.action.SendKey { key = 'j', mods = 'CTRL' } },
+  },
 }
