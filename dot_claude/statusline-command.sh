@@ -4,7 +4,8 @@
 input=$(cat)
 
 # Working directory (truncate to last 5 parts, like starship truncation_length=5)
-cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
+cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd // empty')
+[ -z "$cwd" ] || [ "$cwd" = "null" ] && cwd=$(pwd)
 truncated=$(echo "$cwd" | awk -F'/' '{
   n = split($0, a, "/");
   if (n <= 6) { print $0 }

@@ -21,6 +21,12 @@ brew install ripgrep
 brew install starship
 brew install jq
 
+# Make diff-highlight available on PATH for tig
+dh="$(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight"
+if [ -f "$dh" ] && ! command -v diff-highlight >/dev/null 2>&1; then
+  ln -sf "$dh" "$(brew --prefix)/bin/diff-highlight"
+fi
+
 {{ else if eq .chezmoi.os "linux" -}}
 # Linux (AlmaLinux/RHEL): install via dnf + Homebrew (linuxbrew)
 if command -v brew >/dev/null 2>&1; then
@@ -36,6 +42,11 @@ if command -v brew >/dev/null 2>&1; then
   brew install ripgrep
   brew install starship
   brew install jq
+  # Make diff-highlight available on PATH for tig
+  dh="$(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight"
+  if [ -f "$dh" ] && ! command -v diff-highlight >/dev/null 2>&1; then
+    ln -sf "$dh" "$(brew --prefix)/bin/diff-highlight"
+  fi
 elif command -v dnf >/dev/null 2>&1; then
   sudo dnf install -y zsh git neovim tig tmux fzf ripgrep jq
   echo "Note: lsd, lazygit, zoxide, starship need manual installation on AlmaLinux."
@@ -43,6 +54,10 @@ elif command -v dnf >/dev/null 2>&1; then
   echo "  lazygit:  https://github.com/jesseduffield/lazygit#installation"
   echo "  zoxide:   cargo install zoxide / or curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh"
   echo "  starship: curl -sS https://starship.rs/install.sh | sh"
+else
+  echo "Error: No supported package manager found (expected 'brew' or 'dnf')."
+  echo "Please install Homebrew (https://brew.sh) or use a distribution with 'dnf' available, then re-run chezmoi."
+  exit 1
 fi
 
 {{ end -}}
