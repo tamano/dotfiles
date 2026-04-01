@@ -1,6 +1,8 @@
 # !/bin/sh
 
-if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $2 " " $3 }' | sed -e "s/;//g" -e "s/%//") ; then
+# pmset(macOS専用)でバッテリー情報を取得する。Linux等の非対応環境では --% と表示する。
+battery_info=$(/usr/bin/pmset -g ps 2>/dev/null | awk '{ if (NR == 2) print $2 " " $3 }' | sed -e "s/;//g" -e "s/%//")
+if [[ -n "$battery_info" ]]; then
   battery_quantity=$(echo $battery_info | awk '{print $2}')
   if [[ ! $battery_info =~ "discharging" ]]; then
     battery="#[fg=black]⚡$battery_quantity%#[default]"
@@ -9,6 +11,8 @@ if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $2 " " $3 }' 
   else
     battery="#[fg=black]$battery_quantity%#[default]"
   fi
-  echo "[charge:$battery]"
+else
+  battery="--%"
 fi
+echo "[charge:$battery]"
 
