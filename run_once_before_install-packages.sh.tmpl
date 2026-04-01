@@ -1,0 +1,48 @@
+#!/bin/sh
+# Install required packages (runs once per machine)
+
+{{ if eq .chezmoi.os "darwin" -}}
+# macOS: install via Homebrew
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew is not installed. Please install it first: https://brew.sh"
+  exit 1
+fi
+
+brew install zsh
+brew install git
+brew install lsd
+brew install neovim
+brew install tig
+brew install lazygit
+brew install tmux
+brew install zoxide
+brew install fzf
+brew install ripgrep
+brew install starship
+brew install jq
+
+{{ else if eq .chezmoi.os "linux" -}}
+# Linux (AlmaLinux/RHEL): install via dnf + Homebrew (linuxbrew)
+if command -v brew >/dev/null 2>&1; then
+  brew install zsh
+  brew install git
+  brew install lsd
+  brew install neovim
+  brew install tig
+  brew install lazygit
+  brew install tmux
+  brew install zoxide
+  brew install fzf
+  brew install ripgrep
+  brew install starship
+  brew install jq
+elif command -v dnf >/dev/null 2>&1; then
+  sudo dnf install -y zsh git neovim tig tmux fzf ripgrep jq
+  echo "Note: lsd, lazygit, zoxide, starship need manual installation on AlmaLinux."
+  echo "  lsd:      cargo install lsd / or download from GitHub releases"
+  echo "  lazygit:  https://github.com/jesseduffield/lazygit#installation"
+  echo "  zoxide:   cargo install zoxide / or curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh"
+  echo "  starship: curl -sS https://starship.rs/install.sh | sh"
+fi
+
+{{ end -}}

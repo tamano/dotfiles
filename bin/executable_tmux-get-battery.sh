@@ -11,4 +11,3 @@ if battery_info=$(/usr/bin/pmset -g ps | awk '{ if (NR == 2) print $2 " " $3 }' 
   fi
   echo "[charge:$battery]"
 fi
-

@@ -91,7 +91,7 @@ truncation_symbol = '…/'
 [git_branch]
 format = 'on [$symbol$branch(:$remote_branch)]($style)'
 style = 'bold cyan'
-symbol = ''
+symbol = ''
 
 [git_commit]
 format = ' [\($hash$tag\)]($style)'
@@ -131,4 +131,3 @@ style = 'white'
 
 [memory_usage]
 disabled = false
-
