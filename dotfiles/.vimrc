@@ -24,7 +24,7 @@ if has('wsl')
   set clipboard&
   set clipboard^=unnamedplus
 
-  let g:clipboard = {
+"  let g:clipboard = {
     \   'name': 'myClipboard',
     \   'copy': {
     \      '+': 'win32yank.exe -i',
