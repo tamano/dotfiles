@@ -1,6 +1,7 @@
 alias ls='ls -alG'
-alias l='lsd --icon never --date +"%Y/%m/%d %H:%M" --blocks "permission,user,size,date,name" -a'
+alias l='lsd'
 alias ll='l -l'
+alias la='ll -a'
 
 alias cp='nocorrect cp'
 
