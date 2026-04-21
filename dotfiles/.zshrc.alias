@@ -36,6 +36,7 @@ alias dce='docker-compose exec'
 alias dcer='docker-compose exec rails'
 
 alias vim='nvim'
+alias gl='glow'
 alias lg='lazygit'
 alias ide='~/dotfiles/bin/tmux-pane-splitter.sh'
 

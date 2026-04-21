@@ -11,6 +11,7 @@ brew install zsh
 brew install git
 brew install lsd
 brew install neovim
+brew install glow
 brew install tig
 brew install lazygit
 brew install tmux
