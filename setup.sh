@@ -13,7 +13,7 @@ brew install tmux
 brew install git
 brew install tig
 brew install lazygit
-#brew install gh
+brew install gh
 
 brew install lsd
 brew install zoxide
@@ -22,7 +22,9 @@ brew install neovim
 brew install glow
 
 brew install fzf
+brew install fd
 brew install ripgrep
+brew install git-delta
 
 brew install starship
 
