@@ -3,25 +3,30 @@
 echo "🏎 Starting Setup!"
 
 #########################################################
-echo "⏱️ Begin installing tools"
+echo "⏱️ Begin installing apps"
 #########################################################
 
 # Install brew based tools
 brew install zsh
+brew install tmux
+
 brew install git
-brew install lsd
-brew install neovim
-brew install glow
 brew install tig
 brew install lazygit
-brew install tmux
 #brew install gh
+
+brew install lsd
 brew install zoxide
+
+brew install neovim
+brew install glow
+
 brew install fzf
 brew install ripgrep
+
 brew install starship
 
-echo "✅ Complete installing tools"
+echo "✅ Complete installing apps"
 
 #########################################################
 echo "⏱️ Begin tool's setup"
